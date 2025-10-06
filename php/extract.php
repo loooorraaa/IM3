@@ -32,7 +32,7 @@ function fetchCurrencyData()
     // Führt die cURL-Sitzung aus und erhält den Inhalt
     $response = curl_exec($ch);
     
-    //echo $response;
+    echo $response;
     // echo "<br><br>";
     // print_r($response);
 

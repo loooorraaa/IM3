@@ -1,51 +1,30 @@
 <?php
+// extract.php einbinden, liefert ein Array zurück
+$data = require_once 'extract.php';
 
-/* ============================================================================
-   HANDLUNGSANWEISUNG (transform.php)
-   0) Schau dir die Rohdaten genau an und plane exakt, wie du die Daten umwandeln möchtest (auf Papier)
-   1) Binde extract.php ein und erhalte das Rohdaten-Array.
-   2) Definiere Mapping Koordinaten → Anzeigename (z. B. Bern/Chur/Zürich).
-   3) Konvertiere Einheiten (z. B. °F → °C) und runde sinnvoll (Celsius = (Fahrenheit - 32) * 5 / 9).
-   4) Leite eine einfache "condition" ab (z. B. sonnig/teilweise bewölkt/bewölkt/regnerisch).
-   5) Baue ein kompaktes, flaches Array je Standort mit den Ziel-Feldern.
-   6) Optional: Sortiere die Werte (z. B. nach Zeit), entferne irrelevante Felder.
-   7) Validiere Pflichtfelder (location, temperature_celsius, …).
-   8) Kodieren: json_encode(..., JSON_PRETTY_PRINT) → JSON-String.
-   9) GIB den JSON-String ZURÜCK (return), nicht ausgeben – für den Load-Schritt.
-  10) Fehlerfälle als Exception nach oben weiterreichen (kein HTML/echo).
-   ============================================================================ */
-
-// Bindet das Skript extract.php für Rohdaten ein und speichere es in $data
-$currencydata = include('extract.php');
-print_r($currencydata);
-
-// Definiert eine Zuordnung von Koordinaten zu Stadtnamen
-$locationsMap = [
-    '46.94,7.44' => 'Bern',
-    '46.84,9.52' => 'Chur',
-    '47.36,8.559999' => 'Zürich',
-];
-
-// Funktion, um Fahrenheit in Celsius umzurechnen
-
-// Neue Funktion zur Bestimmung der Wetterbedingung
-
-
-
-// Initialisiert ein Array, um die transformierten Daten zu speichern
-$transformedData = [];
-
-// Transformiert und fügt die notwendigen Informationen hinzu
-foreach ($currencydata as $location) {
-    // Bestimmt den Stadtnamen anhand von Breitengrad und Längengrad
-
-    // Wandelt die Temperatur in Celsius um und rundet sie
-
-    // Bestimmt die Wetterbedingung
-
-    // Konstruiert die neue Struktur mit allen angegebenen Feldern, einschließlich des neuen 'condition'-Feldes
+// Prüfen, ob Daten vorhanden sind
+if (!is_array($data) || empty($data)) {
+    throw new Exception('Keine Rohdaten erhalten oder Daten ungültig.');
 }
 
-// Kodiert die transformierten Daten in JSON
+// Transformation der Rohdaten in das gewünschte Format
+$transformedData = [];
+if (isset($data['rates']) && is_array($data['rates'])) {
+    foreach ($data['rates'] as $currency => $rate) {
+        $transformedData[] = [
+            'name' => $currency,
+            'timestamp' => date('Y-m-d H:i:s', $data['timestamp']),
+            'rates' => (string)$rate // Dezimalzahlen als String übernehmen
+        ];
+    }
+} else {
+    throw new Exception('Keine Raten-Daten im Response.');
+}
 
-// Gibt die JSON-Daten zurück, anstatt sie auszugeben
+// Optional: $transformedData ausgeben oder weiterverarbeiten
+// z.B. für load.php
+// file_put_contents('transformedData.json', json_encode($transformedData, JSON_PRETTY_PRINT));
+
+echo "Daten erfolgreich transformiert!\n";
+print_r($transformedData);
+?>
