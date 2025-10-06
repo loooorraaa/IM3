@@ -22,23 +22,34 @@ print_r($transformedData);
 // Dekodiere die JSON-Daten zu einem Array
 
 // Binde die Datenbankkonfiguration ein
-// require_once ('../config.php');
+require_once 'config.php';
 
-// try {
+try {
 //     // Erstellt eine neue PDO-Instanz mit der Konfiguration aus config.php
+   $pdo = new PDO($dsn, $dbUser, $dbPassword);
 
+    // Beispiel: Ausgabe zur Bestätigung der Verbindung
+    echo "Datenbankverbindung erfolgreich hergestellt.\n";
+
+    // Hier können Sie die Daten in die Datenbank einfügen
 
 //     // SQL-Query mit Platzhaltern für das Einfügen von Daten
-//     $sql = "";
+    $sql = "INSERT INTO Currencies (name, timestamp, rates)
+        VALUES (:name, :timestamp, :rates)";
 
 //     // Bereitet die SQL-Anweisung vor
-//     $stmt = $pdo->prepare($sql);
+    $stmt = $pdo->prepare($sql);
 
 //     // Fügt jedes Element im Array in die Datenbank ein
-//     foreach ($dataArray as $item) {
-//     }
+    foreach ($transformedData as $item) {
+        $stmt->execute([
+            ':name' => $item['name'],
+            ':timestamp' => $item['timestamp'],
+            ':rates' => json_encode($item['rates'])
+        ]);
+    }
 
-//     echo "Daten erfolgreich eingefügt.";
-// } catch (PDOException $e) {
-//     die("Verbindung zur Datenbank konnte nicht hergestellt werden: " . $e->getMessage());
-// }
+    echo "Daten erfolgreich eingefügt.";
+} catch (PDOException $e) {
+    die("Verbindung zur Datenbank konnte nicht hergestellt werden: " . $e->getMessage());
+}
