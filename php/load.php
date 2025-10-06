@@ -15,10 +15,14 @@
 
 
 // Transformations-Skript  als 'transform.php' einbinden
+include ('transform.php');
+print_r($transformedData);
+
 
 // Dekodiere die JSON-Daten zu einem Array
 
 // Binde die Datenbankkonfiguration ein
+require_once ('../config.php');
 
 try {
     // Erstellt eine neue PDO-Instanz mit der Konfiguration aus config.php
