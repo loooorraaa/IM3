@@ -16,7 +16,7 @@
 
 // Transformations-Skript  als 'transform.php' einbinden
 include ('transform.php');
-print_r($transformedData);
+//print_r($transformedData);
 
 
 // Dekodiere die JSON-Daten zu einem Array
@@ -26,7 +26,7 @@ require_once 'config.php';
 
 try {
 //     // Erstellt eine neue PDO-Instanz mit der Konfiguration aus config.php
-   $pdo = new PDO($dsn, $dbUser, $dbPassword);
+    $pdo = new PDO($dsn, $username, $password, $options);
 
     // Beispiel: Ausgabe zur Bestätigung der Verbindung
     echo "Datenbankverbindung erfolgreich hergestellt.\n";
