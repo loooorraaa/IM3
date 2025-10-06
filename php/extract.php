@@ -14,22 +14,25 @@
   10) Fehlerfälle: Exception/Fehlerobjekt nach oben reichen (kein HTML ausgeben).
    ============================================================================ */
 
-function fetchWeatherData()
+function fetchCurrencyData()
 {
-    $url = "https://api.open-meteo.com/v1/forecast?latitude=46.9481,46.8499,47.3667&longitude=7.4474,9.5329,8.55&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,rain,showers,snowfall,cloud_cover&temperature_unit=fahrenheit&timezone=auto&forecast_days=1";
+    $key = "marcoola_f67c8e3675118d51f2bbe258f60d6eba";
+    $url = "https://api.exchangeratesapi.com.au/latest";
 
     // Initialisiert eine cURL-Sitzung
     $ch = curl_init($url);
 
-
     // Setzt Optionen
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Rückgabe des Transfers als String
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        "Authorization: Bearer $key"
+    ]);
 
 
     // Führt die cURL-Sitzung aus und erhält den Inhalt
     $response = curl_exec($ch);
     
-    // echo $response;
+    //echo $response;
     // echo "<br><br>";
     // print_r($response);
 
@@ -43,7 +46,8 @@ function fetchWeatherData()
     // echo ($data);
     // echo "<br><br>";
     // print_r($data);
+    return $data;
 }
 
 // Gibt die Daten zurück, wenn dieses Skript eingebunden ist
-return fetchWeatherData();
+return fetchCurrencyData();

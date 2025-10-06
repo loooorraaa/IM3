@@ -16,7 +16,8 @@
    ============================================================================ */
 
 // Bindet das Skript extract.php für Rohdaten ein und speichere es in $data
-$data = include('extract.php');
+$currencydata = include('extract.php');
+print_r($currencydata);
 
 // Definiert eine Zuordnung von Koordinaten zu Stadtnamen
 $locationsMap = [
@@ -35,7 +36,7 @@ $locationsMap = [
 $transformedData = [];
 
 // Transformiert und fügt die notwendigen Informationen hinzu
-foreach ($data as $location) {
+foreach ($currencydata as $location) {
     // Bestimmt den Stadtnamen anhand von Breitengrad und Längengrad
 
     // Wandelt die Temperatur in Celsius um und rundet sie
