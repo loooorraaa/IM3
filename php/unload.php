@@ -14,6 +14,30 @@
    ============================================================================ */
 
 
-require_once '../config.php'; // Stellen Sie sicher, dass dies auf Ihre tatsächliche Konfigurationsdatei verweist
+require_once 'config.php'; // Stellen Sie sicher, dass dies auf Ihre tatsächliche Konfigurationsdatei verweist
 
 header('Content-Type: application/json');
+
+try {
+    // Erstellt eine neue PDO-Instanz mit der Konfiguration aus config.php
+    $pdo = new PDO($dsn, $username, $password, $options);
+
+    $sql = "SELECT * FROM `Currencies` WHERE 1"; // Passen Sie die Tabelle und Spaltennamen an Ihre Datenbankstruktur an
+
+   //  Unseren Befehl ausführen
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      // JSON-Antwort zurückgeben
+      echo json_encode($data);
+
+   //  print_r($data);
+
+} catch (PDOException $e) {
+    http_response_code(500);
+    echo json_encode(['error' => 'Datenbankfehler: ' . $e->getMessage()]);
+    exit;
+
+}
+
+
