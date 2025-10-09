@@ -1,9 +1,10 @@
 body {
   margin: 0;
-  font-family: Roboto condensed, sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   background-color: #FFEA99; 
   color: #000;
 }
+
 
 h1, h2, p {
   margin: 0;
