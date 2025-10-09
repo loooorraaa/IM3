@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  font-family: Roboto condensed, sans-serif;
+  background-color: #FFEA99; 
+  color: #000;
+}
+
+h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* HEADER */
+header {
+  text-align: left;
+  padding: 10px 0 0 20px;
+}
+
+header h1 {
+  font-size: 11rem;
+  font-weight: 400;
+}
+
+header .subtitle {
+  font-size: 2rem;
+  margin-left: 20px;
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 60px 10%;
+  font-size: 0.8rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.footer.left,
+.footer.middle {
+  flex: 1;
+  min-width: 220px;
+}
+
+footer p {
+  margin-bottom: 8px;
+}
+
+.fhgr_logo img {
+  width: 80px;
+  height: auto;
+}
