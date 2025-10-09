@@ -58,7 +58,7 @@ header .subtitle {
   padding: 30px;
 }
 
-.dive_into    {
+.dive_into {
   font-size: 2rem;
   font-weight: 400;
   text-align: center;
@@ -87,6 +87,102 @@ header .subtitle {
   margin-bottom: 280px;
 }
 
+/* CARD TRANSITION EFFECT */
+.card {
+  background: none;
+  border: none;
+  position: relative;
+  width: 400px;
+  height: 500px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid #000;
+  border-radius: 20px;
+  background-color: #fff;
+  overflow: hidden;
+  transition: background-color 0.5s ease;
+}
+
+/* Frontseite */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 400;
+  font-size: 2rem;
+  transition: opacity 0.5s ease;
+}
+
+/* Startzustand: Rückseite unsichtbar */
+.card-front {
+  opacity: 1;
+  z-index: 2;
+}
+
+.card-back {
+  opacity: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  padding: 40px 20px;      
+  box-sizing: border-box;
+}
+
+/* Hover-Effekt: Front ausblenden, Rückseite einblenden */
+.card:hover .card-inner {
+  background-color: #FFFFFF;
+  color: #000;
+  border-color: #000;
+}
+
+.card:hover .card-front {
+  opacity: 0;
+}
+
+.card:hover .card-back {
+  opacity: 1;
+}
+
+/* Währungsliste */
+.currency-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;      
+  gap: 5px;
+  width: 100%;
+  max-width: 300px;
+  padding: 20px 0;          
+  box-sizing: border-box;
+}
+
+.currency-list div {
+  border: 1.5px solid #fff;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 1.5rem;
+  background-color: #BBC7EE;
+  width: 100%;             
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.currency-list div:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
 
 /* FOOTER */
 footer {
@@ -114,33 +210,4 @@ footer p {
   height: auto;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  header {
-    text-align: center;
-    padding: 40px 5%;
-  }
 
-  header h1 {
-    font-size: 3rem;
-  }
-
-  .cards {
-    gap: 20px;
-  }
-
-  .card {
-    width: 180px;
-    height: 140px;
-  }
-
-  footer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .footer.left, .footer.middle {
-    margin-bottom: 20px;
-  }
-}
