@@ -27,6 +27,12 @@ header .subtitle {
   margin-left: 20px;
 }
 
+/* CHART */
+canvas {
+  max-width: 800px;
+  margin: 40px auto;
+}
+
 /* FOOTER */
 footer {
   display: flex;

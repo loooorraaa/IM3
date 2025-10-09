@@ -6,24 +6,51 @@
     <title>CurrenSea</title>
     <link rel="stylesheet" href="CSS/währungsrechner.css">
 </head>
+
 <body>
     <header>
     <h1>CURRENSEA</h1>
     <p class="subtitle">SURF THE EXCHANGE</p>       
     </header>
-       <canvas id="myChart"></canvas>
     
+    <canvas id="exchangeRateChart"></canvas>
 
-    <footer>
+   <footer>
       <div class="footer left">
-        <p>POWERED BY EXCHANGE RATES API</p>
+        <p><strong>POWERED BY EXCHANGE RATES API</strong></p>
         <p>Reserve Bank of Australia (RBA)<br>A student project from HKB/FHGR<br>© 2025</p>
       </div>
       <div class="footer middle">
-        <p>DESIGNED BY<br>LAURA SEGER & MARINA LAMPERT</p>
-        <div class="fhgr logo right">FHGR</div>
+        <p> <strong>DESIGNED BY</strong><br>LAURA SEGER & MARINA LAMPERT</p>
       </div>
+      <div class="footer right">
+        <div class="fhgr_logo"> <img src="images/fhgr logo.png" alt="fhgr logo"></div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src ="währungsrechner.js"></script>
+    <script src="script.js"></script>
+    <script>
+      const ctx = document.getElementById('exchangeRateChart');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+    </script>
 </body>
 </html>

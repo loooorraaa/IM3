@@ -1,6 +1,6 @@
 console.log("Hello, World!");
 
-// API URL   $key = "marcoola_f67c8e3675118d51f2bbe258f60d6eba"; $url = "https://api.exchangeratesapi.com.au/latest";
+API URL   $key = "marcoola_f67c8e3675118d51f2bbe258f60d6eba"; $url = "https://api.exchangeratesapi.com.au/latest";
 
 fetch('https://interaktivemedien3.laura-seger.ch/php/unload.php')
   .then(response => response.json())
@@ -29,3 +29,6 @@ const data = {
     tension: 0.1
   }]
 };
+
+
+
