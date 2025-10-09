@@ -1,9 +1,8 @@
-const config = {
-  type: 'line',
-  data: data,
-};
+// Chart.js
+let myChart = document.querySelector('#exchangeRateChart');
 
-const labels = Utils.months({count: 7});
+
+const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 const data = {
   labels: labels,
   datasets: [{
@@ -15,4 +14,12 @@ const data = {
   }]
 };
 
-  
+
+const config = {
+  type: 'line',
+  data: data,
+};
+
+var exchangeRateChart = new Chart(myChart, config);
+
+

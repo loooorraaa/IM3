@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CurrenSea</title>
     <link rel="stylesheet" href="CSS/währungsrechner.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -27,30 +28,8 @@
         <div class="fhgr_logo"> <img src="images/fhgr logo.png" alt="fhgr logo"></div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <script src ="währungsrechner.js"></script>
     <script src="script.js"></script>
-    <script>
-      const ctx = document.getElementById('exchangeRateChart');
-
-  new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-    </script>
 </body>
 </html>
