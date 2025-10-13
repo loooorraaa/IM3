@@ -29,6 +29,11 @@ header .subtitle {
 
 /* CHART */
 canvas {
+  width: 100%;
+  height: 400px;
+}
+
+#currencyChart {
   max-width: 800px;
   margin: 40px auto;
 }

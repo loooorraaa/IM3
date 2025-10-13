@@ -1,5 +1,14 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const ctx = document.getElementById("currencyChart").getContext("2d");
+document.addEventListener("DOMContentLoaded", async function () {
+  if (typeof Chart === "undefined") {
+    console.error("Chart.js library is not loaded.");
+    return;
+  }
+  const canvasEl = document.getElementById("currencyChart");
+  if (!canvasEl) {
+    console.error('Canvas #currencyChart nicht gefunden');
+    return;
+  }
+  const ctx = canvasEl.getContext("2d");
   const currency2Select = document.getElementById("currency2");
   const startDateInput = document.getElementById("startDate");
   const endDateInput = document.getElementById("endDate");
@@ -22,11 +31,22 @@ document.addEventListener("DOMContentLoaded", function () {
       startDate,
       endDate
     });
-    const response = await fetch(`/php/get_currency_data.php?${params.toString()}`);
+  const fetchUrl = `php/get_currency_data.php?${params.toString()}`;
+  console.log('Fetching chart data from', fetchUrl);
+  const response = await fetch(fetchUrl);
     const data = await response.json();
+  console.log('get_currency_data response:', data);
 
     if (data.error) {
       alert(data.error);
+      return;
+    }
+
+    if (!Array.isArray(data.currency1) || data.currency1.length === 0) {
+      console.warn('Keine Daten in currency1:', data.currency1);
+      // Render leeren Hinweis-Chart
+      if (chart) chart.destroy();
+      chart = new Chart(ctx, { type: 'line', data: { labels: ['keine daten'], datasets:[{label:'-', data:[0]}] } });
       return;
     }
 
@@ -49,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     ];
 
-    if (data.currency2.length > 0) {
+    if (Array.isArray(data.currency2) && data.currency2.length > 0) {
       datasets.push({
         label: currency2,
         data: data.currency2.map(d => d.rate),
@@ -58,6 +78,9 @@ document.addEventListener("DOMContentLoaded", function () {
         tension: 0.2
       });
     }
+
+    console.log('Labels:', labels);
+    console.log('Datasets:', datasets);
 
     if (chart) chart.destroy();
 
