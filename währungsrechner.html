@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CurrenSea</title>
     <link rel="stylesheet" href="CSS/währungsrechner.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 </head>
 
 <body>
@@ -14,7 +14,29 @@
     <p class="subtitle">SURF THE EXCHANGE</p>       
     </header>
     
-    <canvas id="exchangeRateChart"></canvas>
+<div class="controls">
+   <label for="currency2">Currency 2:</label>
+   <select id="currency2">
+    <option value="">Select Option</option>
+    <option value="USD">USD</option>
+    <option value="EUR">EUR</option>
+    <option value="GBP">GBP</option>
+    <option value="CHF">CHF</option>
+    <option value="JPY">JPY</option>
+   </select>
+
+   <label for="startDate">Start:</label>
+   <input type="date" id="startDate">
+
+    <label for="endDate">End:</label>
+   <input type="date" id="endDate">
+
+   <button id="showRangeBtn">Show Range</button>
+   <button id="refreshBtn">REFRESH</button>
+</div>
+
+<canvas id="currencyChart"></canvas>
+
 
    <footer>
       <div class="footer left">
@@ -29,7 +51,7 @@
     </footer>
 
     
-    <script src ="währungsrechner.js"></script>
+    <script src ="chart.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

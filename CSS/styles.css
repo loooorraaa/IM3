@@ -131,6 +131,7 @@ header .subtitle {
   z-index: 2;
 }
 
+
 .card-back {
   opacity: 0;
   z-index: 1;
@@ -154,6 +155,16 @@ header .subtitle {
 
 .card:hover .card-back {
   opacity: 1;
+}
+
+/* Wenn die Front ausgeblendet ist, darf sie keine Pointer-Events mehr blockieren */
+.card-front[style*="opacity: 0"], .card:hover .card-front {
+  pointer-events: none;
+}
+
+/* Die Rückseite soll Pointer-Events empfangen, wenn sichtbar */
+.card-back {
+  pointer-events: auto;
 }
 
 /* Währungsliste */
