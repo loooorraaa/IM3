@@ -45,7 +45,7 @@ try {
         $stmt->execute([
             ':name' => $item['name'],
             ':timestamp' => $item['timestamp'],
-            ':rates' => json_encode($item['rates'])
+            ':rates' => $item['rates'],
         ]);
     }
 

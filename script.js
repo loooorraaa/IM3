@@ -1,4 +1,4 @@
-console.log("Hello, CurrenSea!");
+console.log("Hello, script.js!");
 
 // API URL – falls du sie später für AJAX brauchst
 const apiKey = "marcoola_f67c8e3675118d51f2bbe258f60d6eba";
