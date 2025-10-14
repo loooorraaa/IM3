@@ -234,7 +234,7 @@ async function renderChart() {
     return;
   }
 
-  const colors = ["rgb(75,192,192)", "rgb(192,75,75)"];
+  const colors = ["rgba(32, 80, 203, 1)", "rgba(110, 148, 229, 1)"];
   const datasets = [];
   const allLabels = new Set();
 
