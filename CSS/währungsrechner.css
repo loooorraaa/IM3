@@ -1,10 +1,9 @@
 body {
   margin: 0;
   font-family: 'Roboto Condensed', sans-serif;
-  background-color: #FFEA99; 
+  background-color: #FFEA99;
   color: #000;
 }
-
 
 h1, h2, p {
   margin: 0;
@@ -27,17 +26,141 @@ header .subtitle {
   margin-left: 20px;
 }
 
+/* CHART SECTION */
+.chart-container {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.chart-container h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.chart-box {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  padding: 30px;
+  gap: 40px;
+}
+
 /* CHART */
-canvas {
+#currencyChart {
   width: 100%;
   height: 400px;
 }
 
-
-#currencyChart {
-  max-width: 800px;
-  margin: 40px auto;
+/* CONTROLS */
+.controls {
+  display: grid;
+  gap: 20px;
 }
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+select, input[type="date"], button {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #000;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+button,
+#showRangeBtn, #refreshBtn, #toggleNormalizeBtn {
+  background-color: #DEE3FF;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #C8D2FF;
+}
+
+button.refresh {
+  background-color: #D6DAFF;
+}
+
+
+/* INFO AUD */
+.info_AUD {
+  text-align: center;
+  padding: 60px 10%;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.info_AUD h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.info_AUD p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.link_API {
+  color: #000;
+  text-decoration: underline;
+}
+
+.link_API:visited {
+  color: #000;
+}
+
+/* NEW CURRENCY WAVE */
+.button,
+#newwave_Button {
+  background-color: #002363;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 20px 20px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: white;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#newwave_Button:hover {
+  background-color: #0038a0;
+  transform: translateY(-2px);
+}
+
+/* Container zentrieren */
+.new_wave {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.link_new_currency_wave {
+  text-decoration: none;
+  color: white;
+}
+
+.link_new_currency_wave:visited {
+  color: white;
+}
+
+
 
 /* FOOTER */
 footer {

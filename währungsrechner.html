@@ -5,55 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CurrenSea</title>
     <link rel="stylesheet" href="CSS/währungsrechner.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
     <header>
-    <h1>CURRENSEA</h1>
-    <p class="subtitle">SURF THE EXCHANGE</p>       
+        <h1>CURRENSEA</h1>
+        <p class="subtitle">SURF THE EXCHANGE</p>       
     </header>
-    
-<div class="controls">
-   <label for="currency2">Currency 2:</label>
-   <select id="currency2">
-    <option value="">Select Option</option>
-    <option value="USD">USD</option>
-    <option value="EUR">EUR</option>
-    <option value="GBP">GBP</option>
-    <option value="CHF">CHF</option>
-    <option value="JPY">JPY</option>
-   </select>
 
-   <label for="startDate">Start:</label>
-   <input type="date" id="startDate">
+    <section class="chart-container">
+        <h2>CURRENCY DEVELOPMENT LAST DAY</h2>
 
-    <label for="endDate">End:</label>
-   <input type="date" id="endDate">
+        <div class="chart-box">
+            <canvas id="currencyChart"></canvas>
 
-   <button id="showRangeBtn">Show Range</button>
-   <button id="refreshBtn">REFRESH</button>
-   <button id="toggleNormalizeBtn">Normalize: ON</button>
+            <div class="controls">
+                <div class="control-group">
+                    <label for="currency2">Currency 2</label>
+                    <select id="currency2">
+                        <option value="">Select Option</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                        <option value="CHF">CHF</option>
+                        <option value="JPY">JPY</option>
+                    </select>
+                </div>
 
-</div>
+                <div class="control-group">
+                    <label for="startDate">Start</label>
+                    <input type="date" id="startDate">
+                </div>
 
-<canvas id="currencyChart"></canvas>
+                <div class="control-group">
+                    <label for="endDate">End</label>
+                    <input type="date" id="endDate">
+                </div>
 
+                <button id="showRangeBtn">Show Range</button>
+                <button id="refreshBtn" class="refresh">REFRESH</button>
+                <button id="toggleNormalizeBtn">Normalize: ON</button>
+            </div>
+        </div>
+    </section>
 
-   <footer>
-      <div class="footer left">
-        <p><strong>POWERED BY EXCHANGE RATES API</strong></p>
-        <p>Reserve Bank of Australia (RBA)<br>A student project from HKB/FHGR<br>© 2025</p>
-      </div>
-      <div class="footer middle">
-        <p> <strong>DESIGNED BY</strong><br>LAURA SEGER & MARINA LAMPERT</p>
-      </div>
-      <div class="footer right">
-        <div class="fhgr_logo"> <img src="images/fhgr logo.png" alt="fhgr logo"></div>
+    <div class="new_wave">
+        <button id="newwave_Button"> <a href="index.html" class="link_new_currency_wave">NEW CURRENCY WAVE</a></button>
+    </div>
+
+        <section class="info_AUD">
+        <p>Our platform monitors global exchange rates with the <br>
+           <strong>Australian Dollar (AUD)</strong> as the reference point. All currency <br>
+           data is sourced directly from the Reserve Bank of <br>
+           Australia (RBA) through the <a href class="link_API" href="https://docs.exchangeratesapi.com.au/introduction">Exchange Rates API</a>.
+        </p>
+    </section> 
+
+    <footer>
+        <div class="footer left">
+            <p><strong>POWERED BY EXCHANGE RATES API</strong></p>
+            <p>Reserve Bank of Australia (RBA)<br>A student project from HKB/FHGR<br>© 2025</p>
+        </div>
+        <div class="footer middle">
+            <p><strong>DESIGNED BY</strong><br>LAURA SEGER & MARINA LAMPERT</p>
+        </div>
+        <div class="footer right">
+            <div class="fhgr_logo">
+                <img src="images/fhgr logo.png" alt="fhgr logo">
+            </div>
+        </div>
     </footer>
 
-    
-    <script src ="chart.js"></script>
+    <script src="chart.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
