@@ -10,6 +10,24 @@ h1, h2, p {
   padding: 0;
 }
 
+.container3 {
+width: 100%;
+ overflow: hidden;
+}
+
+.wave-image-bottom {
+  width: 122%;
+  height: auto;
+  margin-top: 20px;
+  position: absolute;
+  z-index: -1;
+  margin-bottom: -150px; /* Adjust this value to control the overlap */
+  bottom: -400px;
+  right: 0;
+  left: -99px;
+  transform: scaleY(-1);
+}
+
 /* HEADER */
 header {
   text-align: left;
