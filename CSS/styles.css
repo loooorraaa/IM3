@@ -31,6 +31,12 @@ width: 100%;
  overflow: hidden;
 }
 
+.container2 {
+ width: 100%;
+ overflow: hidden;
+ position: relative;
+}
+
 .intro {
   text-align: center;
   max-width: 600px;
@@ -49,7 +55,8 @@ width: 100%;
 .intro p {
   font-size: 1.5rem;
   margin-bottom: 20px;
-  margin-top: 290px;
+  margin-top: 214px;
+  padding-top: 20px;
 }
 
 .diver-image {
@@ -69,7 +76,18 @@ width: 100%;
   margin-bottom: -150px; /* Adjust this value to control the overlap */
   top: -320px;
   left: -594px;
+}
 
+.wave-image-bottom {
+  width: 122%;
+  height: auto;
+  margin-top: 20px;
+  position: absolute;
+  z-index: -1;
+  margin-bottom: -150px; /* Adjust this value to control the overlap */
+  bottom: 0;
+  right: 0;
+  left: -99px
 }
 
 /* INFO AUD */
