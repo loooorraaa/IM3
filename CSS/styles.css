@@ -7,7 +7,6 @@ body {
 
 h1, h2, p {
   margin: 0;
-  padding: 0;
 }
 
 /* HEADER */
@@ -27,12 +26,18 @@ header .subtitle {
 }
 
 /* INTRO SECTION */
+.container {
+width: 100%;
+ overflow: hidden;
+}
+
 .intro {
   text-align: center;
-  padding-top: 100px;
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
-  position: relative; 
+  position: relative;
+  background-color: #FFEA99;
+  border-radius: 50px;
 }
 
 .intro h2 {
@@ -44,7 +49,7 @@ header .subtitle {
 .intro p {
   font-size: 1.5rem;
   margin-bottom: 20px;
-  margin-top: 200px;
+  margin-top: 290px;
 }
 
 .diver-image {
@@ -56,23 +61,26 @@ header .subtitle {
 }
 
 .wave-image {
-  width: 175%;
+  width: 302%;
   height: auto;
   margin-top: 20px;
   position: absolute;
-  z-index: 0;
+  z-index: -1;
   margin-bottom: -150px; /* Adjust this value to control the overlap */
-  top: -70px;
-  left: -299px;
+  top: -320px;
+  left: -594px;
+
 }
 
 /* INFO AUD */
 .info_AUD {
   text-align: center;
-  padding-top: 10px;
-  max-width: 800px;
+  padding-top: 20px;
+  max-width: 600px;
   margin: 0 auto;
   position: relative;
+  background-color: #FFEA99;
+  border-radius: 50px;
 }
 
 .info_AUD h2 {
