@@ -44,6 +44,7 @@ header .subtitle {
 .intro p {
   font-size: 1.5rem;
   margin-bottom: 20px;
+  margin-top: 200px;
 }
 
 .diver-image {
@@ -55,12 +56,14 @@ header .subtitle {
 }
 
 .wave-image {
-  width: 100%;
+  width: 175%;
   height: auto;
   margin-top: 20px;
   position: absolute;
   z-index: 0;
   margin-bottom: -150px; /* Adjust this value to control the overlap */
+  top: -70px;
+  left: -299px;
 }
 
 /* INFO AUD */

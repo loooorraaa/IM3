@@ -58,13 +58,6 @@ header .subtitle {
   display: block;
 }
 
-
-/* CHART */
-/* #currencyChart {
-  width: 100%;
-  height: 400px;
-} */
-
 /* CONTROLS */
 .controls {
   display: grid;
