@@ -29,7 +29,7 @@ header .subtitle {
 /* INTRO SECTION */
 .intro {
   text-align: center;
-  padding: 60px 10%;
+  padding-top: 100px;
   max-width: 800px;
   margin: 0 auto;
   position: relative;
@@ -50,6 +50,37 @@ header .subtitle {
   width: 60px;
   height: auto;
   margin-left: 100px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+/* INFO AUD */
+.info_AUD {
+  text-align: center;
+  padding-top: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.info_AUD h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.info_AUD p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.link_API {
+  color: #000;
+  text-decoration: underline;
+}
+
+.link_API:visited {
+  color: #000;
 }
 
 /* CURRENCIES SECTION */
