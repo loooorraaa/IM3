@@ -22,7 +22,7 @@ h1, h2, p {
   margin-top: 20px;
   position: absolute;
   z-index: -1;
-  margin-bottom: -150px; /* Adjust this value to control the overlap */
+  margin-bottom: -150px; 
   bottom: -160px;
   right: 0;
   left: -99px;
@@ -188,7 +188,6 @@ footer p {
 }
 }
 
-
 /* 📱 Mobile Responsive Design */
 @media (max-width: 640px) {
 
@@ -227,7 +226,6 @@ footer p {
   }
 
   .chart-box canvas {
-    /* aspect-ratio: 1 / 1; */
     width: 100%;
     max-width: 100%;
   }
@@ -242,7 +240,7 @@ footer p {
   }
 
   .control-group {
-    width: 85%;             /* Einheitliche Breite */
+    width: 85%;            
     max-width: 320px;
     display: flex;
     flex-direction: column;
@@ -252,7 +250,7 @@ footer p {
   select,
   input[type="date"],
   button {
-    width: 100%;            /* Alle gleich breit */
+    width: 100%;           
     box-sizing: border-box;
     font-size: 0.95rem;
     padding: 12px;

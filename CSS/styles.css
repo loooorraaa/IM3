@@ -72,17 +72,6 @@ header .subtitle {
   padding-bottom: 30px;
 }
 
-/* .wave-image {
-  width: 150%;
-  height: auto;
-  margin-top: 20px;
-  position: absolute;
-  z-index: -1;
-  margin-bottom: -150px; 
-  top: 10px;
-  left: -50px;
-} */
-
 .wave-image-container {
   width: 100%;
   height: auto ;
@@ -390,13 +379,6 @@ header .subtitle {
   .fhgr_logo img {
     width: 60px;
   }
-
-/* .wave-image {
-  width: 100%;
-  left: 0;
-  top: 79px;
-  transform: scale(2);
-} */
 
 .wave-image-container {
   top: 50px;
