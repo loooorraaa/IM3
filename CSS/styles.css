@@ -373,19 +373,23 @@ header .subtitle {
 
 }
 
-.footer {
-  display: inline;
-  text-align: center;
-  align-items: center;
-  
-}
+ /* FOOTER */
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+  }
 
-.fhgr_logo{
-  width: 90px;
-  margin-top: 20px;
-  margin-left: 110px;
+  .footer.left,
+  .footer.middle {
+    min-width: unset;
+    margin-bottom: 10px;
+  }
 
-}
+  .fhgr_logo img {
+    width: 60px;
+  }
 
 /* .wave-image {
   width: 100%;

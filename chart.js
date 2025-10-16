@@ -98,6 +98,7 @@ async function renderChart() {
       data: chartData,
       options: {
         responsive: true,
+         maintainAspectRatio: false,
         interaction: { mode: 'index', intersect: false },
         plugins: {
           tooltip: {
@@ -127,6 +128,7 @@ async function renderChart() {
       }
     });
   }
+  DiagrammGroesseAnpassen();
 }
 
 // Toggle normalization ON/OFF
@@ -171,3 +173,21 @@ window.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("currency2").addEventListener("change", renderChart);
   document.getElementById("toggleNormalizeBtn").addEventListener("click", toggleNormalize);
 });
+
+
+function DiagrammGroesseAnpassen() {
+  console.log("Anpassen der Diagrammgrösse");
+  let groesseScreen= window.innerWidth;
+  if (groesseScreen <= 640) 
+    {
+      chart.canvas.parentElement.style.height = "275px";
+    } else {
+      chart.canvas.parentElement.style.height = "500px";
+    }
+  chart.update()
+}
+
+window.addEventListener("resize", DiagrammGroesseAnpassen);
+
+
+
