@@ -184,6 +184,143 @@ footer p {
 /* Responsive Design kleinere laptops */
 @media (max-width: 1512px) {
 .wave-image-bottom {
-  bottom: ;
+  bottom: 0px;
 }
+}
+
+
+/* 📱 Mobile Responsive Design */
+@media (max-width: 640px) {
+
+  body {
+    font-size: 14px;
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+  header h1 {
+    font-size: 4rem;
+    margin-left: 1px;
+  }
+
+  header .subtitle {
+    font-size: 1.5rem;
+    margin-left: 5px;
+  }
+
+  /* CHART SECTION */
+  .chart-container {
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  .chart-container h2 {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .chart-box {
+    grid-template-columns: 1fr;
+    padding: 20px 15px;
+    gap: 20px;
+    border-radius: 12px;
+  }
+
+  .chart-box canvas {
+    /* aspect-ratio: 1 / 1; */
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* CONTROLS */
+  .controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .control-group {
+    width: 85%;             /* Einheitliche Breite */
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  select,
+  input[type="date"],
+  button {
+    width: 100%;            /* Alle gleich breit */
+    box-sizing: border-box;
+    font-size: 0.95rem;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    background-color: #fff;
+  }
+
+  /* DATUMSFELDER (From / To) */
+  .date-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    width: 85%;
+    max-width: 320px;
+  }
+
+  .date-inputs input[type="date"] {
+    width: 100%;
+  }
+
+  /* Buttons */
+  #refreshBtn,
+  #showRangeBtn,
+  #toggleNormalizeBtn {
+    width: 85%;
+    max-width: 320px;
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  /* NEW CURRENCY WAVE */
+  .new_wave {
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #newwave_Button {
+    width: 85%;
+    max-width: 320px;
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  /* FOOTER */
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .footer.left,
+  .footer.middle {
+    min-width: unset;
+    margin-bottom: 10px;
+  }
+
+  .fhgr_logo img {
+    width: 60px;
+  }
+
+  /* Decorative wave image */
+  .wave-image-bottom {
+    width: 150%;
+    left: -25%;
+    bottom: 962px;
+  }
 }
