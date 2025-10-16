@@ -293,15 +293,22 @@ footer p {
 }
 
 /* Responsive Design Smaller Laptops */
-@media (max-width: 1024px) {
- header h1 {
-    font-size: 8rem;
-
-  }
-  .cards {
-    gap: 50px;
-  }
+@media (max-width: 1512px) {
+.dive_into {
+  margin-top: 10px;
 }
+
+.wave-image-bottom {
+  bottom: 0;
+
+}
+.diver-image {
+  margin-left: 800px;
+}
+}
+
+
+  
 /* Responsive Design Mobile */
 @media (max-width: 375px) {
  
