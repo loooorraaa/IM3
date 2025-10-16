@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto Condensed', sans-serif;
@@ -308,7 +312,7 @@ footer p {
 }
   
 /* Responsive Design Mobile */
-@media (max-width: 375px) {
+@media (max-width: 640px) {
  header h1 {
   font-size: 4rem;
   margin-left: 1px;
@@ -366,10 +370,17 @@ header .subtitle {
 }
 
 .wave-image {
-  width: 200%;
-  left: -200px;
+  width: 100%;
+  left: 0;
   top: 79px;
+  transform: scale(2);
+}
+
+.wave-image-bottom {
+  width: 150%;
+  bottom: 429px;
+  right: 0;
+  left: -99px
+}
 
 }
-}
-
