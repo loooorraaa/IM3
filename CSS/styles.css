@@ -176,6 +176,10 @@ header .subtitle {
   font-size: 2rem;
 }
 
+.plus-majorcurrencies, .plus-asiapacific, .plus-seasia {
+  display: none;
+}
+
 /* CARD TRANSITION EFFECT */
 .card {
   background: none;
@@ -405,4 +409,12 @@ header .subtitle {
   left: -99px
 }
 
+.plus-asiapacific, .plus-seasia, .plus-majorcurrencies {
+  display: block;
+  margin-top: 435px;
+  margin-left: 250px;
+  color: #002363;
 }
+
+}
+
