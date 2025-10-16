@@ -63,7 +63,7 @@ width: 100%;
 .diver-image {
   width: 60px;
   height: auto;
-  margin-left: 100px;
+  margin-left: 916px;
   padding-top: 20px;
   padding-bottom: 30px;
 }
@@ -86,7 +86,7 @@ width: 100%;
   position: absolute;
   z-index: -1;
   margin-bottom: -150px; /* Adjust this value to control the overlap */
-  bottom: 0;
+  bottom: -216px;
   right: 0;
   left: -99px
 }
@@ -111,6 +111,7 @@ width: 100%;
 .info_AUD p {
   font-size: 1.5rem;
   margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .link_API {
@@ -132,7 +133,7 @@ width: 100%;
   font-size: 2rem;
   font-weight: 400;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 50px;
 }
 
 .cards {
@@ -140,6 +141,7 @@ width: 100%;
   justify-content: center;
   flex-wrap: wrap;
   gap: 90px;
+  margin-bottom: 280px;
 }
 
 .card {
@@ -154,7 +156,6 @@ width: 100%;
   text-align: center;
   font-weight: 400;
   font-size: 2rem;
-  margin-bottom: 280px;
 }
 
 /* CARD TRANSITION EFFECT */
@@ -291,4 +292,17 @@ footer p {
   height: auto;
 }
 
+/* Responsive Design Smaller Laptops */
+@media (max-width: 1024px) {
+ header h1 {
+    font-size: 8rem;
 
+  }
+  .cards {
+    gap: 50px;
+  }
+}
+/* Responsive Design Mobile */
+@media (max-width: 375px) {
+ 
+}

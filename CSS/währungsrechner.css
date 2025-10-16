@@ -11,8 +11,9 @@ h1, h2, p {
 }
 
 .container3 {
-width: 100%;
+  width: 100%;
  overflow: hidden;
+ position: relative;
 }
 
 .wave-image-bottom {
@@ -22,7 +23,7 @@ width: 100%;
   position: absolute;
   z-index: -1;
   margin-bottom: -150px; /* Adjust this value to control the overlap */
-  bottom: -400px;
+  bottom: -160px;
   right: 0;
   left: -99px;
   transform: scaleY(-1);
