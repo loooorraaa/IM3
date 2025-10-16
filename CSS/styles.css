@@ -292,4 +292,94 @@ footer p {
 }
 
 
+/* ---------------------- */
+/* RESPONSIVE DESIGN FIXED */
+/* ---------------------- */
+
+/* Medium screens (smaller laptops, tablets) */
+@media (max-width: 1024px) {
+  header h1 {
+    font-size: 6rem;
+  }
+
+  header .subtitle {
+    font-size: 1.5rem;
+  }
+
+  .cards {
+    gap: 40px;
+  }
+
+  .card {
+    width: 320px;
+    height: 420px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer.left, .footer.middle, .footer.right {
+    margin-bottom: 20px;
+  }
+
+  .fhgr_logo img {
+    width: 70px;
+  }
+}
+
+/* Small screens (mobile phones) */
+@media (max-width: 768px) {
+  header {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  header h1 {
+    font-size: 4rem;
+  }
+
+  header .subtitle {
+    font-size: 1.2rem;
+    margin-left: 0;
+  }
+
+  .intro p, .info_AUD p {
+    font-size: 1rem;
+    margin-top: 40px;
+    padding: 10px;
+  }
+
+  .wave-image {
+    width: 200%;
+    left: -50%;
+  }
+
+  .diver-image {
+    width: 50px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Stack currency cards vertically */
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .card {
+    width: 90%;
+    height: 380px; /* keep fixed height so front/back remain visible */
+    margin-bottom: 60px;
+    cursor: default;
+  }
+
+  /* Show front face only on mobile */
+  .card-inner {
+    border: 1.5px solid #000;
+    border-radius: 20px;
+    background-color: #fff
 
