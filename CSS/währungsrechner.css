@@ -184,6 +184,6 @@ footer p {
 /* Responsive Design kleinere laptops */
 @media (max-width: 1512px) {
 .wave-image-bottom {
-  bottom: -80px;
+  bottom: ;
 }
 }
