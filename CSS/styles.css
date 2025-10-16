@@ -72,15 +72,30 @@ header .subtitle {
   padding-bottom: 30px;
 }
 
-.wave-image {
+/* .wave-image {
   width: 150%;
   height: auto;
   margin-top: 20px;
   position: absolute;
   z-index: -1;
-  margin-bottom: -150px; /* Adjust this value to control the overlap */
+  margin-bottom: -150px; 
   top: 10px;
   left: -50px;
+} */
+
+.wave-image-container {
+  width: 100%;
+  height: auto ;
+  position: absolute;
+  left: 0;
+  top: 20px;
+  z-index: -1;
+  overflow: clip;
+}
+
+.wave-image {
+  width: 150%;
+  transform: translate(-50px);
 }
 
 .wave-image-bottom {
@@ -89,8 +104,7 @@ header .subtitle {
   margin-top: 20px;
   position: absolute;
   z-index: -1;
-  margin-bottom: -150px; /* Adjust this value to control the overlap */
-  bottom: -216px;
+  margin-bottom: -150px; 
   right: 0;
   left: -99px
 }
@@ -369,11 +383,19 @@ header .subtitle {
 
 }
 
-.wave-image {
+/* .wave-image {
   width: 100%;
   left: 0;
   top: 79px;
   transform: scale(2);
+} */
+
+.wave-image-container {
+  top: 50px;
+}
+
+.wave-image {
+  width: 200%;
 }
 
 .wave-image-bottom {
